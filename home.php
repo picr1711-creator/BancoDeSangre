@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
 
@@ -8,10 +8,125 @@
     <meta name="description" content="">
     <meta name="author" content="">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <style>
+:root {
+  --brand-red: #EF6461;
+  --brand-red-dark: #D8534F;
+  --brand-blue: #4FC3E8;
+  --brand-blue-light: #EAF7FC;
+  --brand-dark: #2B2D42;
+  --brand-white: #FFFFFF;
+
+  --bg-page: #FBFCFE;
+  --bg-card: #FFFFFF;
+  --text-main: #2B2D42;
+  --text-secondary: #5B5E70;
+  --border-soft: rgba(43,45,66,0.08);
+}
+
+body.dark-mode {
+  --bg-page: #1B1D2A;
+  --bg-card: #262A3D;
+  --text-main: #EAF0FA;
+  --text-secondary: #B7BDD1;
+  --border-soft: rgba(0,0,0,0.35);
+}
+
+body {
+  font-family: 'Poppins', 'Segoe UI', Arial, sans-serif;
+  color: var(--text-main);
+  background-color: var(--bg-page);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#demo {
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(43,45,66,0.15);
+}
+#demo .carousel-item::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(43,45,66,0.05) 0%, rgba(43,45,66,0.55) 100%);
+}
+#demo .carousel-item img {
+  object-fit: cover;
+}
+
+h1, h2, h4 {
+  font-weight: 600;
+  color: var(--text-main);
+}
+h1 {
+  background: linear-gradient(90deg, var(--brand-red), var(--brand-blue));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.card {
+  border: none;
+  border-radius: 14px;
+  overflow: hidden;
+  background-color: var(--bg-card);
+  box-shadow: 0 4px 16px var(--border-soft);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 28px var(--border-soft);
+}
+.card-title, .card-text {
+  color: var(--text-main);
+}
+.card-header.bg-info {
+  background: linear-gradient(135deg, var(--brand-red), var(--brand-blue)) !important;
+  border: none !important;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+}
+
+.btn-secondary, .btn-primary {
+  background: linear-gradient(135deg, var(--brand-red), var(--brand-red-dark));
+  border: none;
+  border-radius: 30px;
+  font-weight: 600;
+  padding: 10px 28px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  color: var(--brand-white) !important;
+}
+.btn-secondary:hover, .btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(239,100,97,0.35);
+}
+
+hr {
+  border-top: 1px solid var(--border-soft);
+  margin: 2.5rem 0;
+}
+
+.fade-section {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.fade-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.card-body {
+  color: var(--text-main);
+}
+body.dark-mode .card-body,
+body.dark-mode .card-body * {
+  color: var(--text-main) !important;
+}
 </style>
 </head>
 
@@ -55,12 +170,12 @@ include('head.php'); ?>
     </a>
   </div>
 <br>
-        <h1 style="text-align:center;font-size:45px;">Welcome to BloodBank & Donor Management System</h1>
+        <h1 style="text-align:center;font-size:45px;">Bienvenido al Sistema de Gestión de Banco de Sangre y Donantes</h1>
 <br>
-        <div class="row">
+        <div class="row fade-section">
             <div class="col-lg-4 mb-4">
                 <div class="card">
-                    <h4 class="card-header card bg-info text-white" >The need for blood</h4>
+                    <h4 class="card-header card bg-info text-white" >La necesidad de sangre</h4>
 
                         <p class="card-body overflow-auto" style="padding-left:2%;height:120px;text-align:left;">
                           <?php
@@ -79,7 +194,7 @@ include('head.php'); ?>
             </div>
             <div class="col-lg-4 mb-4">
                 <div class="card">
-                    <h4 class="card-header card bg-info text-white">Blood Tips</h4>
+                    <h4 class="card-header card bg-info text-white">Consejos sobre la sangre</h4>
 
                     <p class="card-body overflow-auto" style="padding-left:2%;height:120px;text-align:left;">
                       <?php
@@ -99,7 +214,7 @@ include('head.php'); ?>
             </div>
             <div class="col-lg-4 mb-4">
                 <div class="card">
-                    <h4 class="card-header card bg-info text-white" >Who you could Help</h4>
+                    <h4 class="card-header card bg-info text-white" >A quién podrías ayudar</h4>
 
                     <p class="card-body overflow-auto" style="padding-left:2%;height:120px;text-align:left;">
                       <?php
@@ -120,9 +235,9 @@ include('head.php'); ?>
             </div>
 </div>
 
-        <h2>Blood Donor Names</h2>
+        <h2>Nombres de Donantes de Sangre</h2>
 
-        <div class="row">
+        <div class="row fade-section">
           <?php
             include 'conn.php';
             $sql= "select * from donor_details join blood where donor_details.donor_blood=blood.blood_id order by rand() limit 6";
@@ -137,11 +252,11 @@ include('head.php'); ?>
                 <div class="card-body">
                   <h3 class="card-title"><?php echo $row['donor_name']; ?></h3>
                   <p class="card-text">
-                    <b>Blood Group : </b> <b><?php echo $row['blood_group']; ?></b><br>
-                    <b>Mobile No. : </b> <?php echo $row['donor_number']; ?><br>
-                    <b>Gender : </b><?php echo $row['donor_gender']; ?><br>
-                    <b>Age : </b> <?php echo $row['donor_age']; ?><br>
-                    <b>Address : </b> <?php echo $row['donor_address']; ?><br>
+                    <b>Grupo Sanguíneo: </b> <b><?php echo $row['blood_group']; ?></b><br>
+                    <b>Nro. Celular: </b> <?php echo $row['donor_number']; ?><br>
+                    <b>Género: </b><?php echo $row['donor_gender']; ?><br>
+                    <b>Edad: </b> <?php echo $row['donor_age']; ?><br>
+                    <b>Dirección: </b> <?php echo $row['donor_address']; ?><br>
                   </p>
 
                 </div>
@@ -153,9 +268,9 @@ include('head.php'); ?>
         <!-- /.row -->
 
         <!-- Features Section -->
-        <div class="row">
+        <div class="row fade-section">
             <div class="col-lg-6">
-                <h2>BLOOD GROUPS</h2>
+                <h2>GRUPOS SANGUÍNEOS</h2>
                 <p>
                   <?php
                     include 'conn.php';
@@ -171,7 +286,7 @@ include('head.php'); ?>
 
             </div>
             <div class="col-lg-6">
-                <img class="img-fluid rounded" src="image\blood_donationcover.jpeg" alt="" >
+                <img class="img-fluid rounded" src="image\blood_donationcover.jpeg" alt="" style="box-shadow: 0 10px 24px rgba(43,45,66,0.15);">
             </div>
         </div>
         <!-- /.row -->
@@ -179,9 +294,9 @@ include('head.php'); ?>
         <hr>
 
         <!-- Call to Action Section -->
-        <div class="row mb-4">
+        <div class="row mb-4 fade-section">
             <div class="col-md-8">
-            <h4>UNIVERSAL DONORS AND RECIPIENTS</h4>
+            <h4>DONANTES Y RECEPTORES UNIVERSALES</h4>
             <p>
               <?php
                 include 'conn.php';
@@ -196,7 +311,7 @@ include('head.php'); ?>
                ?></p>
               </div>
             <div class="col-md-4">
-                <a class="btn btn-lg btn-secondary btn-block" href="donate_blood.php" style="align:center; background-color:#7FB3D5;color:#273746 ">Become a Donor </a>
+                <a class="btn btn-lg btn-secondary btn-block" href="donate_blood.php" style="align:center;">Ser Donante</a>
             </div>
         </div>
 
@@ -204,6 +319,21 @@ include('head.php'); ?>
   </div>
   <?php include('footer.php');?>
 </div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var sections = document.querySelectorAll('.fade-section');
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+  sections.forEach(function(section) { observer.observe(section); });
+});
+</script>
 
 </body>
 

@@ -1,5 +1,3 @@
-
-
 <html>
 <head>
 <style>
@@ -13,12 +11,19 @@
       margin-left:auto;margin-right:auto;
   }
 }
+:root {
+  --brand-red: #EF6461;
+  --brand-red-dark: #D8534F;
+  --brand-blue: #4FC3E8;
+  --brand-dark: #2B2D42;
+}
+
 .blue {
-    background: #347fd0;
+    background: linear-gradient(90deg, var(--brand-red), var(--brand-blue));
 }
 
 .news {
-    box-shadow: inset 0 -15px 30px rgba(10,4,60,0.4), 0 5px 10px rgba(10,20,100,0.5);
+    box-shadow: 0 4px 14px rgba(43,45,66,0.15);
        width: 100%;
        height:50px;
     margin-top:0px;
@@ -37,8 +42,8 @@
     padding: 9px;
     position: relative;
     top: 1%;
-    box-shadow: inset 0 -15px 30px rgba(0,0,0,0.4);
-    font: 16px 'Raleway', Helvetica, Arial, sans-serif;
+    font: 15px 'Poppins', 'Raleway', Helvetica, Arial, sans-serif;
+    font-weight: 500;
     -webkit-font-smoothing: antialiased;
     -webkit-user-select: none;
     cursor: pointer;
@@ -54,7 +59,7 @@
 </head>
 <body>
 <div class="news blue">
-<span style="background-color:#F60F0F;width:125px;height:50px">Latest Updates</span><span class="text1" ><marquee>First blood donation camp to be organised in Hisar By Varun in collabration with Blood Bank& Donation Management System on <b>01/09/2020 at Community Centre PLA.</b> Come and Be a Part of this Noble Cause :) </marquee></span>
+<span style="background-color:var(--brand-dark);width:150px;height:50px;font-weight:600;">Últimas Noticias</span><span class="text1" ><marquee>Se organizará una nueva campaña de donación de sangre. Únete a nuestro Sistema de Gestión de Banco de Sangre y Donación y sé parte de esta noble causa :)</marquee></span>
 </div>
 </body>
 </head>

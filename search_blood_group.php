@@ -14,11 +14,11 @@ $result=mysqli_query($conn,$sql) or die("query unsuccessful.");
         <div class="card-body">
           <h3 class="card-title"><?php echo $row['donor_name']; ?></h3>
           <p class="card-text">
-            <b>Blood Group : </b> <b><?php echo $row['blood_group']; ?></b><br>
-            <b>Mobile No. : </b> <?php echo $row['donor_number']; ?><br>
-            <b>Gender : </b><?php echo $row['donor_gender']; ?><br>
-            <b>Age : </b> <?php echo $row['donor_age']; ?><br>
-            <b>Address : </b> <?php echo $row['donor_address']; ?><br>
+            <b>Grupo Sanguíneo: </b> <b><?php echo $row['blood_group']; ?></b><br>
+            <b>Nro. Celular: </b> <?php echo $row['donor_number']; ?><br>
+            <b>Género: </b><?php echo $row['donor_gender']; ?><br>
+            <b>Edad: </b> <?php echo $row['donor_age']; ?><br>
+            <b>Dirección: </b> <?php echo $row['donor_address']; ?><br>
           </p>
 
         </div>
@@ -31,7 +31,7 @@ $result=mysqli_query($conn,$sql) or die("query unsuccessful.");
   else
   {
 
-      echo '<div class="alert alert-danger">No Donor Found For your search Blood group </div>';
+      echo '<div class="alert alert-danger">No se encontraron donantes para el grupo sanguíneo buscado</div>';
 
   } ?>
 </div>

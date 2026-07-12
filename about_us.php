@@ -5,12 +5,67 @@
   <meta name="description" content="">
   <meta name="author" content="">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
 </head>
 <style>
+:root {
+  --brand-red: #EF6461;
+  --brand-red-dark: #D8534F;
+  --brand-blue: #4FC3E8;
+  --brand-blue-light: #EAF7FC;
+  --brand-dark: #2B2D42;
+  --brand-white: #FFFFFF;
+  --bg-page: #FBFCFE;
+  --text-main: #2B2D42;
+}
+
+body.dark-mode {
+  --bg-page: #1B1D2A;
+  --text-main: #EAF0FA;
+}
+
+body {
+  font-family: 'Poppins', 'Segoe UI', Arial, sans-serif;
+  color: var(--text-main);
+  background-color: var(--bg-page);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+h1 {
+  font-weight: 600;
+  background: linear-gradient(90deg, var(--brand-red), var(--brand-blue));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+p {
+  font-size: 16px;
+  line-height: 1.8;
+  color: var(--text-main);
+}
+
+.img-fluid.rounded {
+  border-radius: 16px !important;
+  box-shadow: 0 10px 30px rgba(43,45,66,0.15);
+  transition: transform 0.3s ease;
+}
+.img-fluid.rounded:hover {
+  transform: translateY(-4px);
+}
+p {
+  font-size: 16px;
+  line-height: 1.8;
+  color: var(--text-main);
+}
+body.dark-mode p,
+body.dark-mode p * {
+  color: var(--text-main) !important;
+}
 </style>
 <body>
 
@@ -27,7 +82,7 @@ include('head.php');
   <div id="content-wrap" style="padding-bottom:50px;">
 <div class="row">
     <div class="col-lg-6">
-        <h1 class="mt-4 mb-3">About Us</h1>
+        <h1 class="mt-4 mb-3">Sobre Nosotros</h1>
         <p> <?php
           include 'conn.php';
           $sql=$sql= "select * from pages where page_type='aboutus'";
